@@ -36,6 +36,10 @@ boxplot(Petal.Width~Species, data=iris, main="Petal Width per Species",
 # install.packages('cowplot')
 
 library(ggplot2)
+
+# cowplot changes the default ggplot theme, revert to original
+theme_set(theme_gray())
+
 spl <- ggplot(iris, aes(x = Species, y = Sepal.Length)) +
         theme(
             legend.title=element_blank(),          # theme sets aesthetic 
